@@ -9,13 +9,13 @@
         android:id="@+id/categories"
         android:name="com.example.allgoods.ui.categories.CategoriesFragment"
         android:label="Categories"
-        tools:layout="@layout/sharethoughts" />
+        tools:layout="@layout/categories" />
 
     <fragment
         android:id="@+id/sharethoughts"
         android:name="com.example.allgoods.ui.sharethoughts.ShareThoughtsFragment"
         android:label="Share Thoughts"
-        tools:layout="@layout/categories" />
+        tools:layout="@layout/sharethoughts" />
 
     <fragment
         android:id="@+id/aboutus"
