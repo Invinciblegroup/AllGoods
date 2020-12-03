@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/categories">
+
+    <fragment
+        android:id="@+id/categories"
+        android:name="com.example.allgoods.ui.categories.CategoriesFragment"
+        android:label="Categories"
+        tools:layout="@layout/sharethoughts" />
+
+    <fragment
+        android:id="@+id/sharethoughts"
+        android:name="com.example.allgoods.ui.sharethoughts.ShareThoughtsFragment"
+        android:label="Share Thoughts"
+        tools:layout="@layout/categories" />
+
+    <fragment
+        android:id="@+id/aboutus"
+        android:name="com.example.allgoods.ui.aboutus.AboutUsFragment"
+        android:label="About Us"
+        tools:layout="@layout/aboutus" />
+</navigation>

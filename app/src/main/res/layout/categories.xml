@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#98F789"
+    android:layout_gravity="center"
+    tools:context=".ui.categories.CategoriesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categories"
+            android:textSize="50sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:shadowColor="@color/red"
+            android:elevation="20dp"/>
+
+        <ImageView
+            android:id="@+id/emotional"
+            android:layout_marginTop="40dp"
+            android:layout_width="330dp"
+            android:layout_height="150dp"
+            android:src="@drawable/emotional"
+            android:background="@drawable/shadow"
+            android:elevation="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:layout_marginTop="-45dp"
+            android:textColor="#ffffff"
+            android:text="Emotional"
+            android:elevation="40dp"/>
+
+        <ImageView
+            android:id="@+id/motivational"
+            android:layout_width="340dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="50dp"
+            android:elevation="20dp"
+            android:padding="1dp"
+            android:src="@drawable/motiva"/>
+
+        <ImageView
+            android:id="@+id/videos"
+            android:layout_width="340dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="40dp"
+            android:padding="1dp"
+            android:src="@drawable/vidlogo"
+            android:elevation="20dp"/>
+
+        <ImageView
+            android:id="@+id/music"
+            android:layout_width="340dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="40dp"
+            android:padding="1dp"
+            android:src="@drawable/musiclogo"
+            android:elevation="40dp"/>
+
+
+    </LinearLayout>
+</ScrollView>
