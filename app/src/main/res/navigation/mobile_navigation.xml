@@ -5,21 +5,22 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/categories">
 
-    <fragment
+    <activity
         android:id="@+id/categories"
-        android:name="com.example.allgoods.ui.categories.CategoriesFragment"
+        android:name="com.example.allgoods.Categories"
         android:label="Categories"
         tools:layout="@layout/categories" />
 
-    <fragment
+    <activity
         android:id="@+id/sharethoughts"
-        android:name="com.example.allgoods.ui.sharethoughts.ShareThoughtsFragment"
+        android:name="com.example.allgoods.Sharethoughts"
         android:label="Share Thoughts"
         tools:layout="@layout/sharethoughts" />
 
-    <fragment
+    <activity
         android:id="@+id/aboutus"
-        android:name="com.example.allgoods.ui.aboutus.AboutUsFragment"
+        android:name="com.example.allgoods.Aboutus"
         android:label="About Us"
         tools:layout="@layout/aboutus" />
+
 </navigation>

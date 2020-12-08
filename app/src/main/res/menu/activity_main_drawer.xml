@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+        <group android:checkableBehavior="single">
         <item
             android:id="@+id/categories"
             android:icon="@drawable/categories"
@@ -16,5 +16,5 @@
             android:id="@+id/aboutus"
             android:icon="@drawable/aboutus"
             android:title="About Us" />
-    </group>
+        </group>
 </menu>
