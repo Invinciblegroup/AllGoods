@@ -15,7 +15,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-1dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#98F789">
 
             <TextView
                 android:id="@+id/nav_fragment"

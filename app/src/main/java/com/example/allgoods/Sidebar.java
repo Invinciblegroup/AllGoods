@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -43,6 +44,15 @@ public class Sidebar extends AppCompatActivity implements NavigationView.OnNavig
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        ImageView imageView = (ImageView)findViewById(R.id.emotional);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Sidebar.this, Emotional.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -56,6 +66,16 @@ public class Sidebar extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_fragment);
+
+        ImageView imageView = (ImageView)findViewById(R.id.emotional);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Sidebar.this, Emotional.class);
+                startActivity(intent);
+            }
+        });
+
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
@@ -64,7 +84,9 @@ public class Sidebar extends AppCompatActivity implements NavigationView.OnNavig
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.action_settings){
+        if(id == R.id.emotional){
+            Intent intent = new Intent(Sidebar.this, Emotional.class);
+            startActivity(intent);
             return true;
         }
 
