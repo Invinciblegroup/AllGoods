@@ -6,44 +6,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
+    android:background="#98F789"
     tools:context=".Sidebar">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#98F789">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#98F789"
-            android:gravity="center">
+        android:orientation="vertical">
 
-            <include layout="@layout/app_bar_main" />
+        <include
+            layout="@layout/main_toolbar1"/>
 
-            <TextView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="All Goods"/>
+            android:orientation="vertical"
+            android:gravity="center">
 
-        <ImageView
-            android:id="@+id/emotional"
-            android:layout_width="340dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="10dp"
-            android:elevation="20dp"
-            android:padding="1dp"
-            android:src="@drawable/motiva"/>
-        </LinearLayout>
-    </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categories"
+                    android:textSize="50sp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:shadowColor="@color/red"
+                    android:elevation="20dp"/>
+
+                <ImageView
+                    android:id="@+id/emotional"
+                    android:layout_marginTop="40dp"
+                    android:layout_width="330dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/emotional"
+                    android:background="@drawable/shadow"
+                    android:elevation="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:layout_marginTop="-45dp"
+                    android:textColor="#ffffff"
+                    android:text="Emotional"
+                    android:elevation="40dp"/>
+
+                <ImageView
+                    android:id="@+id/motivational"
+                    android:layout_width="340dp"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="50dp"
+                    android:elevation="20dp"
+                    android:padding="1dp"
+                    android:src="@drawable/motiva"/>
+
+                <ImageView
+                    android:id="@+id/videos"
+                    android:layout_width="340dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="40dp"
+                    android:padding="1dp"
+                    android:src="@drawable/vidlogo"
+                    android:elevation="20dp"/>
+
+                <ImageView
+                    android:id="@+id/music"
+                    android:layout_width="340dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="40dp"
+                    android:padding="1dp"
+                    android:src="@drawable/musiclogo"
+                    android:elevation="40dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:id="@+id/nav_view"
-        app:menu="@menu/activity_main_drawer"
-        app:headerLayout="@layout/nav_header_main"
-        android:layout_gravity="start"/>
+        android:layout_gravity="start"
+        android:background="@color/white">
+        <include
+            layout="@layout/main_nav_drawer"/>
+
+        <include
+            layout="@layout/nav_sidebar"/>
+
+    </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

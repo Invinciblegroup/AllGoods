@@ -1,50 +1,30 @@
 package com.example.allgoods;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowInsets;
 import android.widget.ImageView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-public class Sidebar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Sidebar extends AppCompatActivity {
 
-    private AppBarConfiguration mAppBarConfiguration;
-    NavigationView nav;
+   DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sidebar);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("All Goods");
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open,R.string.close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        drawerLayout = findViewById(R.id.drawer_layout);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        ImageView imageView = (ImageView)findViewById(R.id.emotional);
+        ImageView imageView = findViewById(R.id.emotional);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,64 +32,83 @@ public class Sidebar extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(intent);
             }
         });
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.sidebar, menu);
-
-        return true;
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_fragment);
-
-        ImageView imageView = (ImageView)findViewById(R.id.emotional);
-        imageView.setOnClickListener(new View.OnClickListener() {
+        ImageView imageView1 = findViewById(R.id.motivational);
+        imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Sidebar.this, Emotional.class);
+                Intent intent = new Intent(Sidebar.this, Motivational.class);
                 startActivity(intent);
             }
         });
+        ImageView imageView2 = findViewById(R.id.videos);
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Sidebar.this, Videos.class);
+                startActivity(intent);
+            }
+        });
+        ImageView imageView3 = findViewById(R.id.music);
+        imageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Sidebar.this, Music.class);
+                startActivity(intent);
+            }
+        });
+    }
 
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
+    public void ClickMenu1(View view){
+
+        openDrawer(drawerLayout);
+    }
+
+    public static void openDrawer(DrawerLayout drawerLayout) {
+        //open drawer layout
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+    public void Clicklogo(View view){
+        //Close Drawer
+        closeDrawer(drawerLayout);
+    }
+
+    public static void closeDrawer(DrawerLayout drawerLayout) {
+        //Close drawer layout
+        //check condition
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            //when the drawer is open
+            //close drawer
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void ClickCategories(View view){
+        //Recreate activity
+        recreate();
+    }
+
+    public void ClickSharethoughts(View view){
+        //Redirect activity to Sharethoughts
+        redirectActivity(this,Sharethoughts.class);
+    }
+    public void ClickAboutus(View view){
+        redirectActivity(this,Aboutus.class);
+    }
+
+    public static void redirectActivity(Activity activity, Class aclass) {
+        //initialize intent
+        Intent intent = new Intent(activity,aclass);
+        //set flags
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //start activity
+        activity.startActivity(intent);
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if(id == R.id.emotional){
-            Intent intent = new Intent(Sidebar.this, Emotional.class);
-            startActivity(intent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if(id == R.id.categories){
-            Intent intent = new Intent(Sidebar.this, Categories.class);
-            startActivity(intent);
-        } else if(id == R.id.sharethoughts){
-            Intent intent = new Intent(Sidebar.this, Sharethoughts.class);
-            startActivity(intent);
-        } else if(id == R.id.aboutus){
-            Intent intent = new Intent(Sidebar.this, Aboutus.class);
-            startActivity(intent);
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+    protected void onPause() {
+        super.onPause();
+        //close drawer
+        closeDrawer(drawerLayout);
     }
 }
