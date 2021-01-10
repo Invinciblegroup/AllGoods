@@ -3,8 +3,16 @@
     <words>
       <w>aboutus</w>
       <w>aclass</w>
+      <w>arrayadapter</w>
+      <w>arraylist</w>
+      <w>btnadd</w>
+      <w>btnsave</w>
+      <w>btnview</w>
       <w>clicklogo</w>
+      <w>databasehepler</w>
+      <w>listview</w>
       <w>sharethoughts</w>
+      <w>thelist</w>
     </words>
   </dictionary>
 </component>

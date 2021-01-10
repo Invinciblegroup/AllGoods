@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowInsets;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +16,14 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 
+import java.util.IdentityHashMap;
+
 public class Sidebar extends AppCompatActivity {
 
    DrawerLayout drawerLayout;
+    EditText etText;
+    Button btnsave,btnview;
+    DatabaseHelper myDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +67,6 @@ public class Sidebar extends AppCompatActivity {
     }
 
     public void ClickMenu1(View view){
-
         openDrawer(drawerLayout);
     }
 
@@ -89,8 +96,17 @@ public class Sidebar extends AppCompatActivity {
     }
 
     public void ClickSharethoughts(View view){
-        //Redirect activity to Sharethoughts
         redirectActivity(this,Sharethoughts.class);
+    }
+
+    public void AddData(String newEntry){
+        boolean insertData = myDB.addData(newEntry);
+
+        if(insertData==true){
+            Toast.makeText(Sidebar.this,"Successfully Entered Data",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(Sidebar.this,"Something went wrong",Toast.LENGTH_SHORT).show();
+        }
     }
     public void ClickAboutus(View view){
         redirectActivity(this,Aboutus.class);

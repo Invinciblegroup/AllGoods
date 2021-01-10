@@ -9,17 +9,18 @@
         android:roundIcon="@mipmap/applogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AllGoods">
-        <activity android:name=".Music">
-        </activity>
-        <activity android:name=".Videos"/>
-        <activity android:name=".Motivational"/>
-        <activity android:name=".Emotional"/>
+        <activity android:name=".Motivational1"></activity>
+        <activity android:name=".Music"></activity>
+        <activity android:name=".Videos" />
+        <activity android:name=".Motivational" />
+        <activity android:name=".Emotional" />
         <activity android:name=".Categories" />
+        <activity android:name=".Aboutus" />
         <activity android:name=".Sharethoughts" />
-        <activity android:name=".Aboutus"/>
+        <activity android:name=".ViewListContent" />
         <activity
             android:name=".Sidebar"
-            android:theme="@style/Theme.AllGoods.NoActionBar"/>
+            android:theme="@style/Theme.AllGoods.NoActionBar" />
         <activity android:name=".StartingActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

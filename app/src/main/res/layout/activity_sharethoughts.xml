@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
     android:orientation="vertical"
-    tools:openDrawer="start"
-    android:background="#98F789"
-    tools:context=".Sharethoughts">
+    android:id="@+id/drawer_layout"
+    tools:context=".Sharethoughts"
+    tools:openDrawer="start">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,12 +17,46 @@
         <include
             layout="@layout/main_toolbar1"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Share Thoughts"
-            android:textSize="40sp"
-            android:gravity="center"/>
+            android:orientation="vertical"
+            android:padding="20px">
+
+            <EditText
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Share Your Thoughts"
+                android:id="@+id/et_text"
+                android:lines="6"
+                android:gravity="center"
+                android:background="@drawable/bg_round"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_add"
+                    android:layout_marginLeft="100dp"
+                    android:text="Save"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_viewdata"
+                    android:layout_marginLeft="10dp"
+                    android:text="View"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -32,9 +65,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/white">
-
-        <include
-            layout="@layout/main_toolbar_emotional"/>
         <include
             layout="@layout/main_nav_drawer"/>
 

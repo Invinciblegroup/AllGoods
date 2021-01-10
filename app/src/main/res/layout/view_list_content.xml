@@ -9,12 +9,6 @@
     tools:context=".ViewListContent"
     tools:openDrawer="start">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -33,9 +27,7 @@
                 android:elevation="20dp"
                 tools:layout_editor_absoluteY="241dp" />
 
-
         </LinearLayout>
-    </ScrollView>
 
     <RelativeLayout
         android:layout_width="300dp"
@@ -51,4 +43,5 @@
         <include
             layout="@layout/nav_sidebar"/>
     </RelativeLayout>
+
 </androidx.drawerlayout.widget.DrawerLayout>
