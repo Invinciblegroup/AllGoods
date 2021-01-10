@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Motivational"
     android:orientation="vertical"
-    android:background="#98F789"
+    android:gravity="center"
     android:id="@+id/drawer_layout"
+    tools:context=".Motivational"
     tools:openDrawer="start">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,64 +20,222 @@
             android:orientation="vertical">
 
             <include
-                layout="@layout/main_toolbar_motivational"/>
+            layout="@layout/main_toolbar_motivational"/>
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Motivation Quotes"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="30dp"/>
+
+            <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:text="Motivational Quotes"
-                android:textSize="40sp"
-                android:textColor="@color/black"
-                android:gravity="center"/>
+                android:rowCount="4"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp">
 
-            <ImageView
-                android:id="@+id/motivational1"
-                android:layout_width="350dp"
-                android:layout_height="160dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/shadow"
-                android:elevation="30dp"
-                android:src="@drawable/motivational1" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/motivational2"
-                android:layout_width="350dp"
-                android:layout_height="160dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/shadow"
-                android:layout_gravity="center"
-                android:elevation="30dp"
-                android:src="@drawable/motivational2" />
-            <ImageView
-                android:id="@+id/motivational3"
-                android:layout_width="350dp"
-                android:layout_height="160dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/shadow"
-                android:layout_gravity="center"
-                android:elevation="30dp"
-                android:src="@drawable/motivational3" />
-            <ImageView
-                android:id="@+id/motivational4"
-                android:layout_width="350dp"
-                android:layout_height="160dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/shadow"
-                android:layout_gravity="center"
-                android:elevation="30dp"
-                android:src="@drawable/motivational4" />
-            <ImageView
-                android:id="@+id/motivational5"
-                android:layout_width="350dp"
-                android:layout_height="160dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/shadow"
-                android:layout_gravity="center"
-                android:elevation="30dp"
-                android:src="@drawable/motivational5"
-                android:layout_marginBottom="20dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/motivational5"
+                            android:id="@+id/motivational1"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/motivational1"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/motivational2"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/motivational3"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/motivational4"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/motivational5"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/motivational3"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/motivational4"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
 
         </LinearLayout>
 
