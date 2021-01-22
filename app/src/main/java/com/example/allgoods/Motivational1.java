@@ -12,6 +12,8 @@ public class Motivational1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motivational1);
+        getSupportActionBar().setTitle("Motivational");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ImageView imageView = findViewById(R.id.motivational1);
 

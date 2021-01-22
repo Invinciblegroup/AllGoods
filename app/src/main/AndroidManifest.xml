@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.allgoods">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +11,12 @@
         android:roundIcon="@mipmap/applogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AllGoods">
-        <activity android:name=".Motivational1"></activity>
-        <activity android:name=".Music"></activity>
+        <activity android:name=".Video">
+        </activity>
+        <activity
+            android:name=".Motivational1"
+            android:parentActivityName=".Motivational" />
+        <activity android:name=".Music" />
         <activity android:name=".Videos" />
         <activity android:name=".Motivational" />
         <activity android:name=".Emotional" />

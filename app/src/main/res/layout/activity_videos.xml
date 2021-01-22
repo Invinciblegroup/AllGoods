@@ -4,28 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:openDrawer="start"
-    android:background="#98F789"
     android:id="@+id/drawer_layout"
     tools:context=".Videos">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
-        <include
-            layout="@layout/main_toolbar_videos"/>
-
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Funny Videos"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:textSize="40sp"/>
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/main_toolbar_videos"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="400dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Funny Videos"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:textSize="40sp"/>
+
+                        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/youtube_player_view"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:elevation="30dp"
+                            app:videoId="CKvyNCZszeE"
+                            app:autoPlay="false"
+                            app:showFullScreenButton="true">
+
+                            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                                android:layout_width="350dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="20dp"
+                                android:elevation="30dp"
+                                app:autoPlay="false"
+                                app:showFullScreenButton="true"
+                                app:videoId="UHNYKT-YdfY" />
+                        </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
+
+                        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:elevation="30dp"
+                            android:layout_marginTop="20dp"
+                            app:videoId="0fxYHQ99d0Q"
+                            app:autoPlay="false"
+                            app:showFullScreenButton="true" />
+
+                        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:elevation="30dp"
+                            android:layout_marginTop="20dp"
+                            app:videoId="8Ep0J3nIShU"
+                            app:autoPlay="false"
+                            app:showFullScreenButton="true" />
+
+                        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                            android:layout_width="350dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:elevation="30dp"
+                            android:layout_marginTop="20dp"
+                            app:videoId="tmwNKs0CBhA"
+                            app:autoPlay="false"
+                            app:showFullScreenButton="true" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </ScrollView>
 
     <RelativeLayout
         android:layout_width="300dp"
