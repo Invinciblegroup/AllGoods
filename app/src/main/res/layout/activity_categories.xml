@@ -35,14 +35,14 @@
                 android:shadowColor="@color/red"
                 android:elevation="20dp"/>
 
-            <ImageView
-                android:id="@+id/emotional"
-                android:layout_marginTop="40dp"
-                android:layout_width="330dp"
-                android:layout_height="150dp"
-                android:src="@drawable/emotional"
-                android:background="@drawable/shadow"
-                android:elevation="20dp"/>
+                <ImageView
+                    android:id="@+id/emotional"
+                    android:layout_marginTop="40dp"
+                    android:layout_width="330dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/emotional"
+                    android:background="@drawable/shadow"
+                    android:elevation="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
